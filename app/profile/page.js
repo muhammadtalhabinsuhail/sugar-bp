@@ -2,6 +2,7 @@
 import { useRef, useState } from 'react';
 import Header, { Avatar } from '../../components/Header';
 import { useUser } from '../../components/useUser';
+import { ui } from '../../components/ui';
 
 // Crop to a centered square, shrink to 256px, compress to JPEG
 function resize(file) {
@@ -49,17 +50,17 @@ export default function Profile() {
   return (
     <>
       <Header user={user} />
-      <main className="page">
-        <section className="card center">
-          <Avatar user={user} size={140} />
-          <h2>{user?.username}</h2>
-          <p className="muted">{user?.email}</p>
-          {msg && <div className="msg">{msg}</div>}
+      <main className="mx-auto max-w-xl px-4 pb-32 pt-5">
+        <section className={`${ui.card} text-center`}>
+          <div className="mb-3 flex justify-center"><Avatar user={user} size={150} /></div>
+          <h2 className="text-2xl font-extrabold">{user?.username}</h2>
+          <p className="mb-2 text-slate-500">{user?.email}</p>
+          {msg && <div className="my-3 rounded-xl bg-blue-50 px-4 py-3 text-base font-semibold text-blue-700">{msg}</div>}
           <input ref={input} type="file" accept="image/*" hidden onChange={pick} />
-          <button className="btn" disabled={busy} onClick={() => input.current.click()}>
+          <button className={ui.btn} disabled={busy} onClick={() => input.current.click()}>
             {user?.photo ? 'Change picture' : 'Upload picture'}
           </button>
-          {user?.photo && <button className="btn ghost" disabled={busy} onClick={() => save(null)}>Remove picture</button>}
+          {user?.photo && <button className={ui.ghost} disabled={busy} onClick={() => save(null)}>Remove picture</button>}
         </section>
       </main>
     </>
