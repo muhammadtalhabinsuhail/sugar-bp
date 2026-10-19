@@ -72,13 +72,13 @@ export default function Dashboard() {
         {!t ? (
           <div className={ui.card}><p className="text-slate-500">Loading...</p></div>
         ) : current ? (
-          <section className="mb-4 rounded-3xl bg-white p-6 shadow-lg shadow-blue-200/60 ring-1 ring-blue-100">
+          <section className="mb-4 rounded-3xl bg-white p-9 shadow-lg shadow-blue-200/60 ring-1 ring-blue-100">
             <div className="mb-3 flex gap-2">
               {SLOTS.map((s) => <span key={s.key} className={`h-2.5 flex-1 rounded-full ${dotColor(s)}`} />)}
             </div>
             <p className="font-extrabold text-blue-600">Sugar test {Math.min(step, 6)} of 6</p>
             <h2 className="mb-5 text-2xl font-extrabold leading-snug text-slate-900">
-               <b>Sugar:</b>{current.ask}
+               <b>Sugar: </b>{current.ask}
             </h2>
             <div className="flex items-center gap-3">
               <input
