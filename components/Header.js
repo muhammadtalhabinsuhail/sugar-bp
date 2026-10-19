@@ -33,16 +33,16 @@ export default function Header({ user }) {
 
   return (
     <>
-      <header className="sticky top-0 z-20 bg-gradient-to-r from-blue-700 to-blue-700 px-2 py-2 text-white  shadow-blue-900/20">
+      <header className="sticky top-0 z-20 bg-gradient-to-r from-blue-700 to-blue-700 px-2 py-1 text-white  shadow-blue-900/20">
         <div className="mx-auto flex max-w-3xl items-center justify-between">
           <Link href="/profile" className="flex items-center gap-3 text-white no-underline">
-            <Avatar user={user} size={45} />
+            <Avatar user={user} size={40} />
             <div className="leading-tight">
-              <small className="block text-sm text-blue-100">Welcome</small>
-              <strong className="text-xl">{user?.username ?? '...'}</strong>
+              <small className="block text-sm text-blue-100"><strong className="text-sm">{user?.username ?? '...'}</strong></small>
+             
             </div>
           </Link>
-          <button onClick={logout} className="rounded-full bg-white/20 px-4 py-2 text-base font-bold transition hover:bg-white/30">
+          <button onClick={logout} className="rounded-full  px-2 py-1 text-base ">
             Log out
           </button>
         </div>
