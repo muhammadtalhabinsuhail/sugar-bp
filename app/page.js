@@ -78,7 +78,7 @@ export default function Dashboard() {
             </div>
             <p className="font-extrabold text-blue-600">Sugar test {Math.min(step, 6)} of 6</p>
             <h2 className="mb-5 text-2xl font-extrabold leading-snug text-slate-900">
-              Enter your sugar {current.ask}
+               <b>Sugar:</b>{current.ask}
             </h2>
             <div className="flex items-center gap-3">
               <input
